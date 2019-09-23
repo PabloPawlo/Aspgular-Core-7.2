@@ -2,15 +2,12 @@
   <div class="jumbotron">
     <h1>Witaj</h1>
     <h2>Angular & Bootstrap & .Net Core Demo</h2>
-    <button type="button" class="btn btn-primary" (click) = "getAllUsers($event)">Wczytaj użytkowników</button>
-    <ul>
-      <li *ngFor="let user of users">
+    <input cols="30" rows="4" [(ngModel)]="id">
+    <p><button class="btn btn-primary" (click)="getUser()">Pokaz usera</button></p>
+    <p>{{id}}</p>
         <p>
           {{ user.surname }} • {{ user.isAlive }} • Created
           {{ user.birthDate | date }}
         </p>
-      </li>
-    </ul>
-   
   </div>
 </div>

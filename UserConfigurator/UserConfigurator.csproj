@@ -26,7 +26,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\Adapters\adapter.ts" />
+  </ItemGroup>
+
+<ItemGroup>
+    <Content Include="ClientApp\tsconfig.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\app\Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\Adapters\adapter.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
