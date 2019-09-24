@@ -2,16 +2,35 @@
   <div class="jumbotron">
     <h1>Witaj</h1>
     <h2>Angular & Bootstrap & .Net Core Demo</h2>
-    <p>ID</p>
-    <input cols="10" rows="1" [(ngModel)]="id">
-    <p>Nazwisko</p>
-    <input cols="10" rows="1" [(ngModel)]="surname">
-    <p>Czy żyje</p>
-    <select [(ngModel)]="isAlive">
-      <option>Tak</option>
-      <option>Nie</option>
-    </select>
-    <p>Data urodzenia</p>
-<input cols="10" rows="1" [(ngModel)]="birthDate">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <span *ngIf="(id.dirty || id.touched) && id.invalid && id.errors.required">
+        Id użytkownika jest wymagane
+      </span>
+      <p>ID: <input formControlName="id" /></p>
+      <span  *ngIf="surname.errors?.pattern">
+        Nazwisko nie moze zawierac cyfr
+      </span>
+      <span *ngIf="(surname.dirty || surname.touched) && surname.invalid && surname.errors.required">
+        Nazwisko wymagane
+      </span>
+      <p> Nazwisko: <input formControlName="surname" type="text" /> </p>
+      <span *ngIf="(isAlive.dirty || isAlive.touched) && isAlive.invalid && isAlive.errors.required">
+        Status życia jest wymagany
+      </span>
+      <p>
+        Czy żyje?:
+        <select formControlName="isAlive">
+          <option [ngValue]="true">Tak</option>
+          <option [ngValue]="false">Nie</option>
+        </select>
+      </p>
+      <span *ngIf="(birthDate.dirty || birthDate.touched) && birthDate.invalid && birthDate.errors.required">
+        Data narodzin jet wymagana
+      </span>
+      <p>Data narodzin: <input formControlName="birthDate" type="date" /></p>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!contactForm.valid" (click)="onSubmit()">Save</button>
+      <button class="btn btn-primary" type="reset" (click)="revert()">Revert</button>
+    </form>
   </div>
 </div>

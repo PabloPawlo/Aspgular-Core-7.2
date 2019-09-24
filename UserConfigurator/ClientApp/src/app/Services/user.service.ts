@@ -14,24 +14,39 @@ export class UserService {
     throw new Error("Błąd wczytywania.");
   }
 
-  private getAllUrl: string = 'https://localhost:44362/api/users/';
-  private getByIdUrl: string = 'https://localhost:44362/api/users/';
-  private postUrl: string = '';
-  private delUrl: string = '';
+  private apiUrl: string = 'https://localhost:44362/api/users/';
+
 
   constructor(private http: HttpClient, private adapter: UserAdapter) { }
 
   getAll(): Observable<User[]> {
-    const url = `${this.getAllUrl}`;
+    const url = `${this.apiUrl}`;
     return this.http.get<User[]>(url).pipe(
-      catchError(this.handleError));   
+      catchError(this.handleError));
   }
 
   getById(id): Observable<User> {
-    const url = `${this.getByIdUrl + id}`;
+    const url = `${this.apiUrl + id}`;
     return this.http.get<User>(url).pipe(
       catchError(this.handleError));
   }
-  
+
+  post(user: User): Observable<User> {
+    const url = `${this.apiUrl}`;
+    return this.http.post<User>(url, user).pipe(
+      catchError(this.handleError));
+  }
+
+  put(user: User): Observable<User> {
+    const url = `${this.apiUrl + user.id}`;
+    return this.http.put<User>(url, user).pipe(
+      catchError(this.handleError));
+  }
+
+  delete(user: User): Observable<User> {
+    const url = `${this.apiUrl + user.id}`;
+    return this.http.delete<User>(url).pipe(
+      catchError(this.handleError));
+  }
 }
 

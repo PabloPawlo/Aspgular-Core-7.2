@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './Components/nav-menu/nav-menu.component';
@@ -13,6 +13,12 @@ import { AllUserComponent } from './Components/all-user/all-user.component';
 import { DeleteUserComponent } from './Components/delete-user/delete-user.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { GetUserComponent } from './Components/get-user/get-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
+import { ErrorDialogService} from './Interceptors/Errors/error-dialog'
+import { HttpConfigInterceptor } from './Interceptors/http-interceptor';
+import { UserService } from './services/User.service';
 
 @NgModule({
   declarations: [
@@ -27,11 +33,16 @@ import { GetUserComponent } from './Components/get-user/get-user.component';
     DeleteUserComponent,
     FooterComponent,
     GetUserComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,   
+    
     RouterModule.forRoot([
       { path: '', component: AllUserComponent, pathMatch: 'full' },
       { path: 'add-user', component: AddUserComponent },
@@ -39,7 +50,11 @@ import { GetUserComponent } from './Components/get-user/get-user.component';
       { path: 'delete-user', component: DeleteUserComponent },
     ])
   ],
-  providers: [],
+  providers: [
+
+     ErrorDialogService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

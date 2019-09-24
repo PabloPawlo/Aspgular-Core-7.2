@@ -27,6 +27,9 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\Adapters\adapter.ts" />
+    <None Remove="ClientApp\src\app\Interceptors\Errors\error-dialog.ts" />
+    <None Remove="ClientApp\src\app\Interceptors\http-interceptor.ts" />
+    <None Remove="ClientApp\src\app\Validators\id-validator.ts" />
   </ItemGroup>
 
 <ItemGroup>
@@ -41,6 +44,9 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\Adapters\adapter.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Interceptors\Errors\error-dialog.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Interceptors\http-interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Validators\id-validator.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
