@@ -9,7 +9,7 @@ import { UserService } from "../../services/User.service";
   styleUrls: ['./get-user.component.css']
 })
 export class GetUserComponent implements OnInit {
-
+  private isAvailable: boolean = true;
   private id: string = "";
   private user: User;
   constructor(private userService: UserService) { }
@@ -25,5 +25,6 @@ export class GetUserComponent implements OnInit {
     {
       this.user = user;      
     });
+    this.isAvailable = !this.isAvailable;
   }
 }

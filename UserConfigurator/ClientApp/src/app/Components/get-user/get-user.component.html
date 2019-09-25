@@ -2,12 +2,21 @@
   <div class="jumbotron">
     <h1>Witaj</h1>
     <h2>Angular & Bootstrap & .Net Core Demo</h2>
-    <input cols="30" rows="4" [(ngModel)]="id">
-    <p><button class="btn btn-primary" (click)="getUser()">Pokaz usera</button></p>
-    <p>{{id}}</p>
-        <p>
-          {{ user.surname }} • {{ user.isAlive }} • Urodzony
-          {{ user.birthDate | date }}
-        </p>
+    <p><input cols="30" rows="4" [(ngModel)]="id"></p>
+    <p *ngIf="!isAvailable" class="list-group-item bg-primary">
+      <span>
+        {{ user.surname }}
+      </span>
+      <span *ngIf="user.isAlive===true">
+        Żywy
+      </span>
+      <span *ngIf="user.isAlive===false">
+        Martwy
+      </span>
+      <span *ngIf="user.birthDate!=null">
+        Urodzony {{ user.birthDate | date }}
+      </span>
+    </p>
+    <button *ngIf="isAvailable" class="btn btn-primary" (click)="getUser()" [ngStyle]="{'display' : isAvailable ? 'initial' : 'none'}">Pokaz usera</button>
   </div>
 </div>

@@ -1,16 +1,26 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Witaj</h1>
-    <h2>Angular & Bootstrap & .Net Core Demo</h2>
-    <button type="button" class="btn btn-primary" (click) = "getAllUsers($event)">Wczytaj użytkowników</button>
-    <ul>
-      <li *ngFor="let user of users">
-        <p>
-          {{ user.surname }} • {{ user.isAlive }} • Created
-          {{ user.birthDate | date }}
-        </p>
+    <h2>Angular & Bootstrap & .Net Core Demo</h2><br/>
+    <button *ngIf="isAvailable" class="btn btn-primary" (click)="getAllUsers()" [ngStyle]="{'display' : isAvailable ? 'initial' : 'none'}">Wczytaj użytkowników</button>
+
+      <ul class="list-group">
+      <li class="list-group-item bg-primary" *ngFor="let user of users">
+          <span>
+            {{ user.surname }}
+          </span>
+          <span *ngIf="user.isAlive===true">
+            Żywy
+          </span>
+          <span *ngIf="user.isAlive===false">
+            Martwy
+          </span>
+          <span *ngIf="user.birthDate!=null">
+            Urodzony {{ user.birthDate | date }}
+          </span>
+
       </li>
     </ul>
-   
+
   </div>
 </div>

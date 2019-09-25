@@ -19,6 +19,7 @@ import { MatDialogModule } from '@angular/material';
 import { ErrorDialogService} from './Interceptors/Errors/error-dialog'
 import { HttpConfigInterceptor } from './Interceptors/http-interceptor';
 import { UserService } from './services/User.service';
+import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { UserService } from './services/User.service';
     DeleteUserComponent,
     FooterComponent,
     GetUserComponent,
+    ErrorDialogComponent,
 
   ],
   imports: [
@@ -41,8 +43,7 @@ import { UserService } from './services/User.service';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule,   
-    
+    MatDialogModule,       
     RouterModule.forRoot([
       { path: '', component: AllUserComponent, pathMatch: 'full' },
       { path: 'add-user', component: AddUserComponent },
@@ -51,10 +52,11 @@ import { UserService } from './services/User.service';
     ])
   ],
   providers: [
-
+     UserService,
      ErrorDialogService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }  
   ],
+  entryComponents: [ErrorDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

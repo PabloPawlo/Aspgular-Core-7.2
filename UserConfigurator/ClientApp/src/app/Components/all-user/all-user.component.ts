@@ -11,7 +11,7 @@ import { UserService } from "../../services/User.service";
 export class AllUserComponent implements OnInit {
 
   users: User[] = [];
-
+  private isAvailable: boolean = true;
   constructor(private userService: UserService) {
   }
 
@@ -21,6 +21,7 @@ export class AllUserComponent implements OnInit {
     {   
       this.users = userList;
     });
+    this.isAvailable = !this.isAvailable;
   }
 
 

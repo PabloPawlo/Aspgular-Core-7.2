@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { User } from "../../models/User.model";
 import { UserService } from "../../services/User.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -12,6 +12,8 @@ export class AddUserComponent implements OnInit {
 
   private user: User = new User(0, '', false, new Date('12'));
   private contactForm: FormGroup;
+ 
+
 
   constructor(private userService: UserService) {
     this.contactForm = this.createFormGroup();
