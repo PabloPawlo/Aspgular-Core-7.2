@@ -1,1 +1,22 @@
-<p>delete-user works!</p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Witaj</h1>
+    <h2>Angular & Bootstrap & .Net Core Demo</h2>
+    <p><input cols="30" rows="4" [(ngModel)]="id"></p>
+    <p *ngIf="!isAvailable" class="list-group-item bg-primary">
+      <span>
+        {{ user.surname }}
+      </span>
+      <span *ngIf="user.isAlive===true">
+        Żywy
+      </span>
+      <span *ngIf="user.isAlive===false">
+        Martwy
+      </span>
+      <span *ngIf="user.birthDate!=null">
+        Urodzony {{ user.birthDate | date }}
+      </span>
+    </p>
+    <button class="btn btn-primary" (click)="delUser()" [ngStyle]="{'display' : isAvailable ? 'initial' : 'none'}">Usuń użytkownika</button>
+  </div>
+</div>

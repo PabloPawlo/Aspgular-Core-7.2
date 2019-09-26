@@ -18,6 +18,10 @@ namespace UserConfigurator.Controllers
         public UsersController()
         {
             _usersList.Add(new User() { Id = 1, Surname = "Kowalski", IsAlive = true, BirthDate = DateTime.Now });
+            _usersList.Add(new User() { Id = 2, Surname = "Gula", IsAlive = true, BirthDate = DateTime.Now });
+            _usersList.Add(new User() { Id = 3, Surname = "Sup", IsAlive = false, BirthDate = DateTime.Now });
+            _usersList.Add(new User() { Id = 4, Surname = "Miu", IsAlive = true, BirthDate = DateTime.Now });
+            _usersList.Add(new User() { Id = 5, Surname = "Rydz", IsAlive = false, BirthDate = DateTime.Now });
         }
 
         // GET: api/Users

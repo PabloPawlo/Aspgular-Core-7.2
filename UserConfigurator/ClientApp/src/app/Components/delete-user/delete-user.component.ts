@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/User.service';
+import { User } from '../../models/User.model';
 
 @Component({
   selector: 'app-delete-user',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteUserComponent implements OnInit {
 
-  constructor() { }
+  private user: User;
+  private id: string = "";
+  private isAvailable: boolean = true;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
-
+  delUser() {
+    this.userService.delete(this.id).subscribe((user: User) => {
+      this.user = user;
+    });
+    this.isAvailable = !this.isAvailable;
+  }
 }

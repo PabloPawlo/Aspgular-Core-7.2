@@ -1,23 +1,23 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Witaj</h1>
-    <h2>Angular & Bootstrap & .Net Core Demo</h2><br/>
+    <h2>Angular & Bootstrap & .Net Core Demo</h2><br />
     <button *ngIf="isAvailable" class="btn btn-primary" (click)="getAllUsers()" [ngStyle]="{'display' : isAvailable ? 'initial' : 'none'}">Wczytaj użytkowników</button>
-
-      <ul class="list-group">
-      <li class="list-group-item bg-primary" *ngFor="let user of users">
-          <span>
-            {{ user.surname }}
-          </span>
-          <span *ngIf="user.isAlive===true">
-            Żywy
-          </span>
-          <span *ngIf="user.isAlive===false">
-            Martwy
-          </span>
-          <span *ngIf="user.birthDate!=null">
-            Urodzony {{ user.birthDate | date }}
-          </span>
+   
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let user of users">
+        <span class="badge badge-primary badge-pill">
+          {{ user.surname }}
+        </span>
+        <span class="badge badge-primary badge-pill" *ngIf="user.isAlive===true">
+          Żywy
+        </span>
+        <span class="badge badge-primary badge-pill" *ngIf="user.isAlive===false">
+          Martwy
+        </span>
+        <span class="badge badge-primary badge-pill" *ngIf="user.birthDate!=null">
+          Urodzony {{ user.birthDate | date }}
+        </span>
 
       </li>
     </ul>

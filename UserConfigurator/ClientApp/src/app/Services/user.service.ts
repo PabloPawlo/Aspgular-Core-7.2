@@ -43,8 +43,8 @@ export class UserService {
       catchError(this.handleError));
   }
 
-  delete(user: User): Observable<User> {
-    const url = `${this.apiUrl + user.id}`;
+  delete(id): Observable<User> {
+    const url = `${this.apiUrl + id}`;
     return this.http.delete<User>(url).pipe(
       catchError(this.handleError));
   }

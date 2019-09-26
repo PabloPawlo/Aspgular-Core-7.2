@@ -14,6 +14,7 @@ export class ErrorDialogService {
     this.isDialogOpen = true;
     const dialogRef = this.dialog.open(ErrorDialogComponent, {
       width: '300px',
+      height: '180px',
       data: data
     });
 

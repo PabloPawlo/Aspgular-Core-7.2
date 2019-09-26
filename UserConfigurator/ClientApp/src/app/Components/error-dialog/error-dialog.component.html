@@ -1,10 +1,4 @@
-<div>
-  <div>
-    <p>
-      Reason: {{data.statusText}}
-    </p>
-    <p>
-      Status: {{data.status}}
-    </p>
-  </div>
+<div class="alert alert-dismissible alert-primary">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Status: {{data.status}}</strong> <a href="#" class="alert-link"> Reason: {{data.statusText}}</a>
 </div>
