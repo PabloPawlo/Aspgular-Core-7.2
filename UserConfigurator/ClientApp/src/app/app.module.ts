@@ -20,6 +20,7 @@ import { ErrorDialogService} from './Interceptors/Errors/error-dialog'
 import { HttpConfigInterceptor } from './Interceptors/http-interceptor';
 import { UserService } from './services/User.service';
 import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
+import { GitButtonComponent } from './Components/git-button/git-button.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.com
     FooterComponent,
     GetUserComponent,
     ErrorDialogComponent,
+    GitButtonComponent,
 
   ],
   imports: [

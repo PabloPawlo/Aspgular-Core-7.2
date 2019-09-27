@@ -39,10 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\Components\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\Adapters\adapter.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Interceptors\Errors\error-dialog.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Interceptors\http-interceptor.ts" />

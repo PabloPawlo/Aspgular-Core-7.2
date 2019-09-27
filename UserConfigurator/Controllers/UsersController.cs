@@ -14,7 +14,6 @@ namespace UserConfigurator.Controllers
     public class UsersController : ControllerBase
     {
         List<User> _usersList = new List<User>();
-
         public UsersController()
         {
             _usersList.Add(new User() { Id = 1, Surname = "Kowalski", IsAlive = true, BirthDate = DateTime.Now });
