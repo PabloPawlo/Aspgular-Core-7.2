@@ -5,9 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './Components/nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AddUserComponent } from './Components/add-user/add-user.component';
 import { AllUserComponent } from './Components/all-user/all-user.component';
 import { DeleteUserComponent } from './Components/delete-user/delete-user.component';
@@ -21,14 +18,12 @@ import { HttpConfigInterceptor } from './Interceptors/http-interceptor';
 import { UserService } from './services/User.service';
 import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
 import { GitButtonComponent } from './Components/git-button/git-button.component';
+import { MessageBoxComponent } from './Components/message-box/message-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     AddUserComponent,
     AllUserComponent,
     GetUserComponent,
@@ -37,6 +32,7 @@ import { GitButtonComponent } from './Components/git-button/git-button.component
     GetUserComponent,
     ErrorDialogComponent,
     GitButtonComponent,
+    MessageBoxComponent,
 
   ],
   imports: [

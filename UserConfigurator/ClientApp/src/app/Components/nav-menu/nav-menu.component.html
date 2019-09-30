@@ -1,22 +1,23 @@
 <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3'>
-  <a class="navbar-brand" [routerLink]='["/"]'>Zarządzaj użytkownikami</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
-          [attr.aria-expanded]="isExpanded" (click)="toggle()">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
-    <ul class="navbar-nav flex-grow">
-      <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-        <a class="nav-link text-light" [routerLink]='["/"]'>Użytkownicy</a>
-      </li>
-      <li class="nav-item" [routerLinkActive]='["link-active"]'>
-        <a class="nav-link text-light" [routerLink]='["/add-user"]'>Dodaj</a>
-      <li class="nav-item" [routerLinkActive]='["link-active"]'>
-        <a class="nav-link text-light" [routerLink]='["/get-user"]'>Pobierz użytkownika po ID</a>
-      </li>
-      <li class="nav-item" [routerLinkActive]='["link-active"]'>
-        <a class="nav-link text-light" [routerLink]='["/delete-user"]'>Usuń</a>
-      </li>
-    </ul>
-  </div>
+      <img src="https://www.polsl.pl/logo/PublishingImages/Politechnika_Sl_logo_pl/pl/czarnobiale/politechnika_sl_logo_bw_pion_pl_rgb.png" alt="temp" style="width:105px;height:105px;">
+        <a class="navbar-brand" [routerLink]='["/"]'>Zarządzaj użytkownikami</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
+            [attr.aria-expanded]="isExpanded" (click)="toggle()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
+      <ul class="navbar-nav flex-grow">
+        <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+          <a class="nav-link text-light" [routerLink]='["/"]'>Użytkownicy</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <a class="nav-link text-light" [routerLink]='["/add-user"]'>Dodaj</a>
+        <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <a class="nav-link text-light" [routerLink]='["/get-user"]'>Pobierz użytkownika po ID</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <a class="nav-link text-light" [routerLink]='["/delete-user"]'>Usuń</a>
+        </li>
+      </ul>
+    </div>
 </nav>
