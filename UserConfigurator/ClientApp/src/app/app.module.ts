@@ -19,6 +19,7 @@ import { UserService } from './services/User.service';
 import { ErrorDialogComponent } from './Components/error-dialog/error-dialog.component';
 import { GitButtonComponent } from './Components/git-button/git-button.component';
 import { MessageBoxComponent } from './Components/message-box/message-box.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MessageBoxComponent } from './Components/message-box/message-box.compon
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule,       
+    MatDialogModule,
+    NgbModule,
     RouterModule.forRoot([
       { path: '', component: AllUserComponent, pathMatch: 'full' },
       { path: 'add-user', component: AddUserComponent },
@@ -54,7 +56,7 @@ import { MessageBoxComponent } from './Components/message-box/message-box.compon
      ErrorDialogService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }  
   ],
-  entryComponents: [ErrorDialogComponent],
+  entryComponents: [ErrorDialogComponent, MessageBoxComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

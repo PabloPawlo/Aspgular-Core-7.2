@@ -7,7 +7,7 @@
         Id użytkownika jest wymagane
       </span>
       <p>ID: <input formControlName="id" /></p>
-      <span  *ngIf="surname.errors?.pattern">
+      <span *ngIf="surname.errors?.pattern">
         Nazwisko nie moze zawierac cyfr
       </span>
       <span *ngIf="(surname.dirty || surname.touched) && surname.invalid && surname.errors.required">
@@ -32,7 +32,7 @@
         <span class="px-2"><button class="btn btn-primary" type="submit" [disabled]="!contactForm.valid" (click)="onSubmit()">Save</button></span>
         <span class="px-2"> <button class="btn btn-primary" type="reset" (click)="revert()">Revert</button></span>
       </p>
- 
+      <button (click)="onModalRequest()">Message</button>
     </form>
   </div>
 

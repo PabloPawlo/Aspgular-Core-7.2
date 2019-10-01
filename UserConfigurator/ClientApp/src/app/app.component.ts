@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MessageBoxComponent } from './Components/message-box/message-box.component';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor() {
+
+  }
+
+ 
+
+
+
+
 }
+
+
+
+
